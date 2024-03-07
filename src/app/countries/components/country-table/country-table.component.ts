@@ -12,5 +12,9 @@ import {CountryResponse} from "../../interfaces/country";
 export class CountryTableComponent {
 
   @Input()
+  public notFoundCase!:string;
+  @Input()
   public countries: CountryResponse[] = []
+  @Input()
+  public notFound:boolean = true;
 }

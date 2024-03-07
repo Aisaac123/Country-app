@@ -1,1 +1,15 @@
-<p>by-country-page works!</p>
+<h2>Por nombre</h2>
+<hr>
+<div class="row">
+  <div class="col">
+    <shared-search-box (searchEvent)="searchByCountry($event)"
+                       placeholder="Buscar por nombre..."></shared-search-box>
+  </div>
+</div>
+
+<div class="row pt-3">
+  <div class="col">
+    <hr>
+    <countries-table [countries]="countries" notFoundCase = 'No se ha encontrado el pais por medio del nombre ingresado'></countries-table>
+  </div>
+</div>

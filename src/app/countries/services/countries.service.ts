@@ -9,11 +9,16 @@ export class CountriesService {
   private url:string = 'https://restcountries.com/v3.1'
   constructor(private http:HttpClient) { }
 
-  searchCapital(query:string):Observable<CountryResponse[]>{
-    const url = `${this.url}/capital/${query}`
+  searchByOption(query?:string, alphaCode?:string):Observable<CountryResponse[]>{
+    let url:string = `${this.url}/${this.option}`;
+    if (query) url = url + `/${query}`;
     return this.http.get<CountryResponse[]>(url)
       .pipe(
         catchError(() => of([]))
       );
+  }
+  private option?:string;
+  set Option(value:'alpha' | 'all' |'region' | 'name' | 'capital') {
+    this.option = value;
   }
 }

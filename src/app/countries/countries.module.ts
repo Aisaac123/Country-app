@@ -10,6 +10,7 @@ import {SharedModule} from "../shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
 import {CountriesService} from "./services/countries.service";
 import { CountryTableComponent } from './components/country-table/country-table.component';
+import { AllCountriesComponent } from './pages/all-countries/all-countries.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CountryTableComponent } from './components/country-table/country-table.
     ByCountryPageComponent,
     ByRegionPageComponent,
     CountryPageComponent,
-    CountryTableComponent
+    CountryTableComponent,
+    AllCountriesComponent,
   ],
   imports: [
     CommonModule,

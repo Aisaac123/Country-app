@@ -11,10 +11,11 @@ export class ByCapitalPageComponent {
 
   public countries:CountryResponse[] = [];
   searchByCapital(search:string):void{
-    this.service.searchCapital(search).subscribe(countries => {
+    this.service.searchByOption(search).subscribe(countries => {
       this.countries = countries
     })
   }
   constructor(public readonly service:CountriesService) {
+    this.service.Option = 'capital'
   }
 }

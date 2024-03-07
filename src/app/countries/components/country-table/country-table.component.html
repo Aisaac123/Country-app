@@ -1,6 +1,6 @@
-<div *ngIf="countries.length === 0; else table"
+<div *ngIf="countries.length === 0 && notFound; else table"
   class="alert alert-warning text-center">
-  No hay paises que mostrar
+  {{ notFoundCase }}
 </div>
 
 <ng-template #table>
@@ -22,7 +22,7 @@
        <td> {{item.name.common}}</td>
        <td> {{item.capital}}</td>
        <td> {{item.population | number}}</td>
-       <td><a href="#"></a> </td>
+       <td><a href="#">Ver más</a> </td>
 
      </tr>
     </tbody>

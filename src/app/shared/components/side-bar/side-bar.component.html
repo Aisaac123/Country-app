@@ -1,23 +1,15 @@
-<h2>Paises</h2>
+<h3 class="text-center">Busqueda</h3>
 <hr>
 <ul class="list-group">
-  <li
-    class="list-group-item"
-    routerLinkActive="active"
-    routerLink="countries/by-capital">
-    Capital Page
-  </li>
-  <li
-    class="list-group-item"
-    routerLinkActive="active"
-    routerLink="countries/by-region">
-    Region Page
-  </li>
-  <li
-    class="list-group-item"
-    routerLinkActive="active"
-    routerLink="countries/by-country">
-    Country Page
-  </li>
+  <div *ngFor="let item of routes_link" class="row pt-2 text-center">
+    <li
+      class="list-group-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}"
+      [routerLink]="item.routeString">
+      {{ item.name }}
+    </li>
+  </div>
 </ul>
+
 
