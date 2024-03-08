@@ -8,9 +8,10 @@ import {CountriesService} from "../../services/countries.service";
   styles: ``
 })
 export class AllCountriesComponent {
-  public countries:CountryResponse[] = [];
+  public countries:CountryResponse[]  = [];
   searchByRegion():void{
     this.service.searchByOption().subscribe(countries => {
+      if (!countries ) return
       this.countries = countries
     })
   }

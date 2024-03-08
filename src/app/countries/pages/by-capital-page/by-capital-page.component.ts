@@ -12,6 +12,7 @@ export class ByCapitalPageComponent {
   public countries:CountryResponse[] = [];
   searchByCapital(search:string):void{
     this.service.searchByOption(search).subscribe(countries => {
+      if (!countries ) return
       this.countries = countries
     })
   }

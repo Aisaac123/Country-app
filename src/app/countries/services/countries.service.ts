@@ -9,7 +9,7 @@ export class CountriesService {
   private url:string = 'https://restcountries.com/v3.1'
   constructor(private http:HttpClient) { }
 
-  searchByOption(query?:string, alphaCode?:string):Observable<CountryResponse[]>{
+  searchByOption(query?:string):Observable<CountryResponse[] | null>{
     let url:string = `${this.url}/${this.option}`;
     if (query) url = url + `/${query}`;
     return this.http.get<CountryResponse[]>(url)

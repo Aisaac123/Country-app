@@ -11,6 +11,7 @@ export class ByRegionPageComponent {
   public countries:CountryResponse[] = [];
   searchByRegion(search:string):void{
     this.service.searchByOption(search).subscribe(countries => {
+      if (!countries) return
       this.countries = countries
     })
   }

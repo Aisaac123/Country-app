@@ -11,6 +11,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {CountriesService} from "./services/countries.service";
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { AllCountriesComponent } from './pages/all-countries/all-countries.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AllCountriesComponent } from './pages/all-countries/all-countries.compo
     CountriesRoutingModule,
     SharedModule,
     HttpClientModule,
+    RouterModule
   ],
   providers:[
     CountriesService
